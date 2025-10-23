@@ -28,7 +28,11 @@ def get_ai_response():
         'messages': [{'role': 'user', 'content': PROMPT}],
         'temperature': 0.9
     }
-    
+    # In generate_fact.py, inside the get_ai_response function
+print(f"DEBUG: Calling API with model: {data['model']}")
+# ... rest of the code ...
+response = requests.post('https://api.groq.com/openai/v1/chat/completions', headers=headers, json=data) 
+# ... rest of the code ...
     # Replace the URL with your chosen provider's chat completions endpoint
     response = requests.post('https://api.groq.com/openai/v1/chat/completions', headers=headers, json=data)
     
